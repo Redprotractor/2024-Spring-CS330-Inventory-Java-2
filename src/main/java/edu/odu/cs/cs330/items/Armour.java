@@ -62,7 +62,12 @@ public class Armour extends Item {
      */
     public Armour(Armour src)
     {
-
+    	this.name = src.name;
+    	this.durability = src.durability;
+    	this.material = src.material;
+    	this.modifier = src.modifier;
+    	this.modifierLevel = src.modifierLevel;
+    	this.element = src.element;
     }
 
     /**
@@ -244,7 +249,13 @@ public class Armour extends Item {
     @Override
     public String toString()
     {
-        return "";
+        return "  Nme: " + super.getName() 
+    		+ "\n  Dur: " + this.getDurability()
+    		+ "\n  Def: " + this.getDefense()
+    		+ "\n  Mtl: " + this.getMaterial()
+    		+ "\n  Mdr: " + this.getModifier() 
+    		+ " (Lvl " + this.getModifierLevel() + ")"
+    		+ "\n  Emt: " + this.getElement() + "\n";
     }
 }
 
