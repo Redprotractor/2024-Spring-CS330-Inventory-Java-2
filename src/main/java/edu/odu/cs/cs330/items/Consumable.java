@@ -136,7 +136,7 @@ public class Consumable extends Item {
     public int hashCode()
     {
         // Replace the next line
-        return -1;
+        return (this.name.hashCode() + this.effect.hashCode());
     }
 
     /**
