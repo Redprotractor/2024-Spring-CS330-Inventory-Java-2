@@ -59,6 +59,7 @@ public class Tool extends Item {
     {
     	this.name = src.name;
     	this.durability = src.durability;
+    	this.speed = src.speed;
     	this.material = src.material;
     	this.modifier = src.modifier;
     	this.modifierLevel = src.modifierLevel;
