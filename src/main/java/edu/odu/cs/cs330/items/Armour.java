@@ -253,7 +253,7 @@ public class Armour extends Item {
     @Override
     public int hashCode()
     {
-        return -1;
+        return this.name.hashCode() + this.material.hashCode() + this.modifier.hashCode() + this.element.hashCode();
     }
 
     /**
