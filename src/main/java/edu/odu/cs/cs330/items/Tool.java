@@ -208,7 +208,9 @@ public class Tool extends Item {
         }
 
         Tool rhsItem = (Tool) rhs;
-        if (this.name == rhsItem.name && this.material == rhsItem.material && this.modifier == rhsItem.modifier)
+        if (this.name.equals(rhsItem.name) 
+        		&& this.material.equals(rhsItem.material) 
+        		&& this.modifier.equals(rhsItem.modifier))
         	return true;
         
         return false;
