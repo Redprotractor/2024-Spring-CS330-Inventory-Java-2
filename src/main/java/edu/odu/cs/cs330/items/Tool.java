@@ -57,7 +57,11 @@ public class Tool extends Item {
      */
     public Tool(Tool src)
     {
-
+    	this.name = src.name;
+    	this.durability = src.durability;
+    	this.material = src.material;
+    	this.modifier = src.modifier;
+    	this.modifierLevel = src.modifierLevel;
     }
 
     /**
@@ -173,6 +177,12 @@ public class Tool extends Item {
     public void read(Scanner snr)
     {
         // Complete this method
+    	super.name = snr.next();
+    	this.material = snr.next();
+    	this.durability = snr.nextInt();
+    	this.speed = snr.nextInt();
+    	this.modifier = snr.next();
+    	this.modifierLevel = snr.nextInt();
     }
 
     /**
@@ -197,8 +207,9 @@ public class Tool extends Item {
         }
 
         Tool rhsItem = (Tool) rhs;
-
-        // Replace the next line
+        if (this.name == rhsItem.name && this.material == rhsItem.material && this.modifier == rhsItem.modifier)
+        	return true;
+        
         return false;
     }
 
@@ -220,6 +231,11 @@ public class Tool extends Item {
     @Override
     public String toString()
     {
-        return "";
+        return "  Nme: " + super.getName() 
+    		+ "\n  Dur: " + this.getDurability()
+    		+ "\n  Spd: " + this.getSpeed()
+    		+ "\n  Mtl: " + this.getMaterial()
+    		+ "\n  Mdr: " + this.getModifier() 
+    		+ " (Lvl " + this.getModifierLevel() + ")\n";
     }
 }
