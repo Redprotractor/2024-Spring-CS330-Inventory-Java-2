@@ -50,6 +50,7 @@ public class Armour extends Item {
     	this.durability = 0;
     	this.defense = 0;
     	this.material = "";
+    	this.modifier = "";
     	this.modifierLevel = 0;
     	this.element  = "";
     	
@@ -238,12 +239,13 @@ public class Armour extends Item {
         Armour rhsItem = (Armour) rhs;
 
         // Replace the next line
-        if (this.name == rhsItem.name 
-        		&& this.material == rhsItem.material 
-        		&& this.modifier==rhsItem.modifier
-        		&& this.element==rhsItem.element)
+        if (this.name.equals(rhsItem.name) 
+        		&& this.material.equals(rhsItem.material) 
+        		&& this.modifier.equals(rhsItem.modifier)
+        		&& this.element.equals(rhsItem.element))
         	return true;
-        return false;
+        else 
+        	return false;
     }
 
     /**
@@ -253,7 +255,10 @@ public class Armour extends Item {
     @Override
     public int hashCode()
     {
-        return this.name.hashCode() + this.material.hashCode() + this.modifier.hashCode() + this.element.hashCode();
+        return this.name.hashCode() 
+        		+ this.material.hashCode() 
+        		+ this.modifier.hashCode() 
+        		+ this.element.hashCode();
     }
 
     /**
