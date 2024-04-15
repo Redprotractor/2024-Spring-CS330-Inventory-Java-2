@@ -64,6 +64,7 @@ public class Armour extends Item {
     {
     	this.name = src.name;
     	this.durability = src.durability;
+    	this.defense = src.defense;
     	this.material = src.material;
     	this.modifier = src.modifier;
     	this.modifierLevel = src.modifierLevel;
@@ -202,7 +203,14 @@ public class Armour extends Item {
     @Override
     public void read(Scanner snr)
     {
-
+    	super.name = snr.next();
+    	
+    	this.material = snr.next();
+    	this.durability = snr.nextInt();
+    	this.defense = snr.nextInt();
+    	this.modifier = snr.next();
+    	this.modifierLevel = snr.nextInt();
+    	this.element = snr.next();
     }
 
     /**
