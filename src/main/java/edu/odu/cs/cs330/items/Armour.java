@@ -238,6 +238,11 @@ public class Armour extends Item {
         Armour rhsItem = (Armour) rhs;
 
         // Replace the next line
+        if (this.name == rhsItem.name 
+        		&& this.material == rhsItem.material 
+        		&& this.modifier==rhsItem.modifier
+        		&& this.element==rhsItem.element)
+        	return true;
         return false;
     }
 
