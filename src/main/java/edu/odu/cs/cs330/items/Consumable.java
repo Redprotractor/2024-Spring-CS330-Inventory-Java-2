@@ -38,7 +38,9 @@ public class Consumable extends Item {
      */
     public Consumable(Consumable src)
     {
-
+    	this.name = src.name;
+    	this.effect = src.effect;
+    	this.uses = src.uses;
     }
 
     /**
@@ -94,8 +96,8 @@ public class Consumable extends Item {
     public void read(Scanner snr)
     {
         super.name = snr.next();
-        effect     = snr.next();
-        uses       = snr.nextInt();
+        this.effect     = snr.next();
+        this.uses       = snr.nextInt();
     }
 
     /**
@@ -105,7 +107,7 @@ public class Consumable extends Item {
     public Item clone()
     {
         // Replace the next line
-        return null;
+        return new Consumable(this);
     }
 
     /**
@@ -122,8 +124,10 @@ public class Consumable extends Item {
 
         Consumable rhsItem = (Consumable) rhs;
 
-        // Replace the next line
-        return false;
+        if (this.name.equals(rhsItem.name) && this.effect.equals(rhsItem.effect))
+        	return true;
+        else
+        	return false;
     }
 
     /**
@@ -136,7 +140,7 @@ public class Consumable extends Item {
     public int hashCode()
     {
         // Replace the next line
-        return (this.name.hashCode() + this.effect.hashCode());
+        return this.name.hashCode() + this.effect.hashCode();
     }
 
     /**
@@ -145,6 +149,8 @@ public class Consumable extends Item {
     @Override
     public String toString()
     {
-        return "";
+    	return "  Nme: " + super.getName()
+    		+ "\n  Eft: " + this.getEffect()
+    		+ "\n  Use: " + this.getNumberOfUses()+ "\n";
     }
 }
