@@ -46,7 +46,13 @@ public class Armour extends Item {
      */
     public Armour()
     {
-
+    	super("");
+    	this.durability = 0;
+    	this.defense = 0;
+    	this.material = "";
+    	this.modifierLevel = 0;
+    	this.element  = "";
+    	
     }
 
     /**
